@@ -1,7 +1,6 @@
 {
   "name": "tech-friends",
   "version": "1.0.0",
-  "description": "",
   "main": "server/server.js",
   "scripts": {
     "start": "node server --ignore client",
@@ -15,5 +14,6 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
-  }
+  },
+  "description": ""
 }
