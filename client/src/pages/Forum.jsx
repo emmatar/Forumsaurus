@@ -4,7 +4,7 @@ import ProfileList from '../components/ProfileList';
 
 import { QUERY_PROFILES } from '../utils/queries';
 
-const Home = () => {
+const Forum = () => {
   const { loading, data } = useQuery(QUERY_PROFILES);
   const profiles = data?.profiles || [];
 
@@ -17,7 +17,7 @@ const Home = () => {
           ) : (
             <ProfileList
               profiles={profiles}
-              title="Here's the current roster of friends..."
+              title="Recent Posts:"
             />
           )}
         </div>
@@ -26,4 +26,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Forum;
