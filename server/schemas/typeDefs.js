@@ -1,10 +1,21 @@
 const typeDefs = `
   type Profile {
-    _id: ID
-    name: String
+    _id: ID!
+    username: String
     email: String
-    password: String
-    skills: [String]!
+    bio: String
+    avatarImage: Buffer
+    posts: [Post]
+  }
+
+  type Post {
+    _id: ID
+    profile: Profile
+    comments: [Comment]
+  }
+
+  type Comment {
+    _id: ID
   }
 
   type Auth {
@@ -13,19 +24,22 @@ const typeDefs = `
   }
 
   type Query {
-    profiles: [Profile]!
+    profiles: [Profile]
+    posts: [Post]
+    comments: [Comment]
     profile(profileId: ID!): Profile
-    # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
-    me: Profile
   }
 
   type Mutation {
-    addProfile(name: String!, email: String!, password: String!): Auth
+    addProfile(username: String!, email: String!, password: String!): Auth
+    updateProfile(username: String!, email: String!, password: String!): Auth
+    removeProfile: Profile
     login(email: String!, password: String!): Auth
 
-    addSkill(profileId: ID!, skill: String!): Profile
-    removeProfile: Profile
-    removeSkill(skill: String!): Profile
+    addPost(postId: ID!): Profile
+    removePost(postId: ID!): Profile
+    addComment(commentId: ID!): Post
+    removeComment(commentId: ID!): Post
   }
 `;
 

@@ -1,3 +1,6 @@
 const Profile = require('./Profile');
+const Post = require('./Post.js')
+const Comment = require('./Comment')
 
-module.exports = { Profile };
+
+module.exports = { Profile, Post, Comment };
