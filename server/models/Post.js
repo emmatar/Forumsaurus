@@ -19,10 +19,6 @@ const postSchema = new mongoose.Schema({
   rawrs: {
     type: Number,
     default: 0
-  },
-  meteor: {
-    type: Number,
-    default: 0
   }
 });
 
