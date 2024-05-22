@@ -1,11 +1,8 @@
-// Information not pertaining to user login info
-// More along the lines of Profile page including avatar, bio, user shared info
-
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const profileSchema = new Schema({
-  username: {
+const userSchema = new Schema({
+  name: {
     type: String,
     required: true,
     unique: true,
@@ -22,19 +19,6 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  bio: {
-    type: String,
-    minlength: 1,
-  },
-  avatarImage: {
-    type: Buffer,
-  },
-  posts: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "post",
-    },
-  ],
 });
 
 // set up pre-save middleware to create password
@@ -52,7 +36,6 @@ profileSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-const Profile = model("Profile", profileSchema);
+const User = model("User", profileSchema);
 
-module.exports = Profile;
-
+module.exports = User;
