@@ -15,6 +15,14 @@ const postSchema = new mongoose.Schema({
   profile_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Profile'
+  },
+  rawrs: {
+    type: Number,
+    default: 0
+  },
+  meteor: {
+    type: Number,
+    default: 0
   }
 });
 
