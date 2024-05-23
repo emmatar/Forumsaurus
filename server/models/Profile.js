@@ -27,7 +27,7 @@ const profileSchema = new Schema({
     minlength: 1,
   },
   avatarImage: {
-    type: Buffer,
+    type: String,
   },
   posts: [
     {
@@ -55,4 +55,3 @@ profileSchema.methods.isCorrectPassword = async function (password) {
 const Profile = model("Profile", profileSchema);
 
 module.exports = Profile;
-
