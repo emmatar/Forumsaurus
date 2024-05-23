@@ -35,7 +35,6 @@ const typeDefs = `
   type Query {
     profiles: [Profile]
     posts: [Post]
-    comments: [Comment]
     me: Profile
   }
 
