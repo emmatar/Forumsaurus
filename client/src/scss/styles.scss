@@ -12,4 +12,11 @@ $light: rgb(255, 252, 215);
 $gray: gray;
 $dark: rgb(46, 46, 46);
 
+@import "./fonts.scss";
+
+//$font-family-sans-serif: "San Francisco", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+//$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
+//$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:       "San Francisco" !default;
+
 @import "../node_modules/bootstrap/scss/bootstrap";
