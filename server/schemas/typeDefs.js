@@ -10,13 +10,22 @@ const typeDefs = `
 
   type Post {
     _id: ID
+    title: String
+    content: String
+    date: Date
     profile: Profile
+    rawrs: Number
     comments: [Comment]
   }
 
   type Comment {
     _id: ID
+    body: String
+    profile: Profile
+    post: Post
   }
+  
+  type Auth {
 
   type Auth {
     token: ID!
