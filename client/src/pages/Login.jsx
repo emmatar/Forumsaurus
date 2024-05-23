@@ -43,16 +43,16 @@ const Login = (props) => {
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
+        <div className="card shadow">
+          <h4 className="card-header text-center bg-dark text-light p-2">Login</h4>
+          <div className="card">
             {data ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form className='form-group' onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
                   placeholder="Your email"

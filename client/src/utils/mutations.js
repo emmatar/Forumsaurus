@@ -38,5 +38,6 @@ export const ADD_POST = gql`
   }
 `;
 
-export const ADD_COMMENT = gpl `
-mutation addComment(&title: String! m $)`
+// 'Uncaught GraphQLError: Syntax Error: Expected "$", found Name "m".'
+//export const ADD_COMMENT = gql `
+//mutation addComment(&title: String! m $)`
