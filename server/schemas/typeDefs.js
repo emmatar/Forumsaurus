@@ -4,9 +4,11 @@ const typeDefs = `
     username: String
     email: String
     bio: String
-    avatarImage: Buffer
+    avatarImage: String
     posts: [Post]
   }
+
+  scalar Date
 
   type Post {
     _id: ID
@@ -14,7 +16,7 @@ const typeDefs = `
     content: String
     date: Date
     profile: Profile
-    rawrs: Number
+    rawrs: Int
     comments: [Comment]
   }
 
@@ -24,8 +26,6 @@ const typeDefs = `
     profile: Profile
     post: Post
   }
-  
-  type Auth {
 
   type Auth {
     token: ID!
@@ -36,7 +36,7 @@ const typeDefs = `
     profiles: [Profile]
     posts: [Post]
     comments: [Comment]
-    profile(profileId: ID!): Profile
+    me: Profile
   }
 
   type Mutation {
