@@ -1,0 +1,15 @@
+$primary: #900;
+$enable-shadow: true;
+$prefix: "-mo";
+
+$primary: green;
+$secondary: yellow;
+$success: green;
+$info: brown;
+$warning: orange;
+$danger: red;
+$light: rgb(255, 252, 215);
+$gray: gray;
+$dark: rgb(46, 46, 46);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
