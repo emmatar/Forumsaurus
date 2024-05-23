@@ -38,5 +38,13 @@ export const ADD_POST = gql`
   }
 `;
 
-export const ADD_COMMENT = gpl `
-mutation addComment(&title: String! m $)`
+export const ADD_COMMENT = gql`
+  mutation addComment($body: String!, $profileId: ID!, $postId: ID!) {
+    addComment(body: $body, profileId: $profileId, postId: $postId) {
+      _id
+      body
+      profile_id
+      post_id
+    }
+  }
+`;
