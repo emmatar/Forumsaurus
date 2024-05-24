@@ -58,11 +58,11 @@ const Signup = () => {
                 <div className="container-fluid">
                   <div className="form-item mb-3 py-1">
                     <label htmlFor='username' className='col-auto form-label'>
-                      Email
+                      Username
                     </label>
                     <input
                       className="form-input col-auto border-primary border-2 form-control"
-                      placeholder="Your username"
+                      placeholder="xX_tyranosaurusFLEX_Xx"
                       name="username"
                       type="text"
                       value={formState.username}
@@ -75,7 +75,7 @@ const Signup = () => {
                     </label>
                     <input
                       className="form-input col-auto border-primary border-2 form-control"
-                      placeholder="name@example.com"
+                      placeholder="dinodestroyer6billion@example.com"
                       name="email"
                       type="email"
                       value={formState.email}
@@ -88,7 +88,7 @@ const Signup = () => {
                     </label>
                     <input
                       className="form-input form-control border-primary border-2"
-                      placeholder="password123"
+                      placeholder="ilikeSusie1!"
                       name="password"
                       type="password"
                       value={formState.password}
