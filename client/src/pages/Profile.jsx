@@ -1,9 +1,9 @@
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery, } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 
 
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
-import {ADD_POST} from '../utils/mutations';
 
 import Auth from '../utils/auth';
 import { useState, useEffect } from 'react';
@@ -12,7 +12,6 @@ const Profile = () => {
   const { profileId } = useParams(); 
   const [topPost,setTopPost] = useState();
   const [otherPosts,setOtherPosts] = useState([]);
-  
   
   // If there is no `profileId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
   const { loading, data } = useQuery(
