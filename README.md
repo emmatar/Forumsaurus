@@ -46,6 +46,3 @@
   Elijah Matar: m.matar515@gmail.com <br/> 
   Eric Snider: ewsnider28@yahoo.com <br/> 
   Ally Gael: alexanderjgael@gmail.com
-  
-
-  
