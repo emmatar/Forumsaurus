@@ -41,49 +41,70 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+    <main> 
+      <div className="container">
+        <div className="container col-md-6 shadow flex-col align-items-center justify-content-center border border-3 border-primary rounded pb-4 mb-4">
+          <div className="container col-lg-8 mt-4 text-center">
+            <h4 className="mb-3 fw-bold bg-primary shadow text-light rounded-pill p-3">Sign Up</h4>
+          </div>
+          <div className="container col-lg-8 my-4">
             {data ? (
               <p>
-                Success! You may now head{" "}
+                Success! You may now return{" "}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your username"
-                  name="username"
-                  type="text"
-                  value={formState.username}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-info"
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                  Submit
-                </button>
+                <div className="container-fluid">
+                  <div className="form-item mb-3 py-1">
+                    <label htmlFor='username' className='col-auto form-label'>
+                      Email
+                    </label>
+                    <input
+                      className="form-input col-auto border-primary border-2 form-control"
+                      placeholder="Your username"
+                      name="username"
+                      type="text"
+                      value={formState.username}
+                      onChange={handleChange}
+                    />
+                  </div>
+                <div className="form-item mb-3 py-1">
+                    <label htmlFor='userEmail' className='col-auto form-label'>
+                      Email
+                    </label>
+                    <input
+                      className="form-input col-auto border-primary border-2 form-control"
+                      placeholder="name@example.com"
+                      name="email"
+                      type="email"
+                      value={formState.email}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="form-item mb-3 py-1">
+                    <label htmlFor='userPassword' className='col-auto form-label'>
+                      Password
+                    </label>
+                    <input
+                      className="form-input form-control border-primary border-2"
+                      placeholder="password123"
+                      name="password"
+                      type="password"
+                      value={formState.password}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="container-fluid text-center">
+                    <button
+                      className="form-btn btn btn-md rounded-pill fw-medium text-light btn-warning"
+                      style={{ cursor: 'pointer' }}
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
               </form>
             )}
 
