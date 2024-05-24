@@ -118,16 +118,6 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-
-    //set up add post
-    addPost: async(parent, args, context) => {
-      if(context.user) {
-        console.log("inside if")
-        return Post.create(args)
-      }
-      console.log("error")
-      throw AuthenticationError;
-    }
   },
 };
 
