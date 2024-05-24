@@ -39,23 +39,24 @@ const Forum = () => {
 const { loading, data } = useQuery(QUERY_PROFILES);
 const profiles = data?.profiles || [];
 
-  return (
-    <main>
-      <div className="flex-row justify-center">
-        <div className="col-12 col-md-10 my-3">
-          <button onClick={handleAddPost}>Add Post</button>
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <ForumList
-              posts={''}
-              title="Recent Posts:"
-            />
-          )}
-        </div>
+return (
+  <main>
+    <div className="flex-row justify-center">
+      <div className="col-12 col-md-10 my-3">
+        <button onClick={() => handleAddPost(postId)}>Add Post</button>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <ForumList
+            posts={profiles}
+            title="Recent Posts:"
+            handleDeletePost={handleDeletePost}
+          />
+        )}
       </div>
-    </main>
-  );
+    </div>
+  </main>
+);
 };
 
 export default Forum;
