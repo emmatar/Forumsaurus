@@ -13,10 +13,14 @@ const postSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  profile_id: {
+  profile: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: "Profile",
+  },
+  comments: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Comment",
   },
   rawrs: {
     type: Number,
