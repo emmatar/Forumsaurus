@@ -1,14 +1,19 @@
 import { Navigate, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useQuery, } from '@apollo/client';
 
 
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
+import {ADD_POST} from '../utils/mutations';
 
 import Auth from '../utils/auth';
+import { useState, useEffect } from 'react';
 
 const Profile = () => {
-  const { profileId } = useParams();
-
+  const { profileId } = useParams(); 
+  const [topPost,setTopPost] = useState();
+  const [otherPosts,setOtherPosts] = useState([]);
+  
+  
   // If there is no `profileId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
   const { loading, data } = useQuery(
     profileId ? QUERY_SINGLE_PROFILE : QUERY_ME,
@@ -18,7 +23,17 @@ const Profile = () => {
   );
 
   // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
-  const profile = data?.me || data?.profile || {};
+  const profile = data?.me || data?.profile;
+  useEffect(()=>{
+    if (profile?.posts?.length){
+      const sortedPosts = profile.posts.sort((a,b)=>{
+        a?.rawrs > b?.rawrs
+      })
+      const tempTopPost = sortedPosts[0]
+      setTopPost(tempTopPost)
+      setOtherPosts(profile.posts?.filter((p)=>p._id !== tempTopPost._id))
+    }
+  },[profile])
 
   // Use React Router's `<Redirect />` component to redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data._id === profileId) {
@@ -40,23 +55,26 @@ const Profile = () => {
 
   return (
     <div>
-      <h2 className="card-header">
-        {profileId ? `${profile.name}'s` : 'Your'} friends have endorsed these
-        skills...
-      </h2>
-
-      {profile.skills?.length > 0 && (
-        <SkillsList
-          skills={profile.skills}
-          isLoggedInUser={!profileId && true}
-        />
+      {!profile?.posts?.length && (
+        <h2>
+          No Posts Yet
+        </h2>
       )}
+      {topPost && (
+        //display the top post
+        <div></div>
+      )}
+      {otherPosts.map((post,index)=>{
+        return (
+          // display each post
+          <div>
 
-      <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <SkillForm profileId={profile._id} />
-      </div>
+          </div>
+        )
+      })}
+
     </div>
-  );
+  )
 };
 
 export default Profile;
