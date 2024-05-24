@@ -38,14 +38,14 @@
   <h2>Contact Our Developers!
   <h3>GitHub Links:</h3>
 
-  [Alexander Gael](https://github.com/AlexanderJGael)<br/> 
+  [Ally Gael](https://github.com/AlexanderJGael)<br/> 
   [Eric Snider](https://github.com/ews578) <br/> 
   [Elijah Matar](https://github.com/emmatar)
   <h3>Emails:</h3>
 
   Elijah Matar: m.matar515@gmail.com <br/> 
   Eric Snider: ewsnider28@yahoo.com <br/> 
-  Alexander Gael: alexanderjgael@gmail.com
+  Ally Gael: alexanderjgael@gmail.com
   
 
   

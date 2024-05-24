@@ -38,6 +38,9 @@ const Header = () => {
               <Link className="btn btn-lg btn-primary border border-2 border-light fw-medium text-light m-2" to="/signup">
                 Signup
               </Link>
+              <Link className="btn btn-lg btn-warning border border-2 border-warning fw-bold fw-medium text-light m-2" to="/profileTemp">
+                TEST
+              </Link>
             </>
           )}
         </div>
