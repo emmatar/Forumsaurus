@@ -47,3 +47,7 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+/* TODO: Write QUERY_POSTS */
+
+/* TODO: Write QUERY_POST */

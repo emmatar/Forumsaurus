@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-const ProfileList = ({ profiles, title }) => {
-  if (!profiles.length) {
-    return <h3>No Profiles Yet</h3>;
+const ForumList = ({ posts, title }) => {
+  if (!posts.length) {
+    return <h3>No Entries Yet</h3>;
   }
 
   return (
@@ -36,4 +36,4 @@ const ProfileList = ({ profiles, title }) => {
   );
 };
 
-export default ProfileList;
+export default ForumList;

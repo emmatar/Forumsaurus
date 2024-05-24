@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
+import dinoHeader from '../../assets/dinoHeader.svg';
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
@@ -40,6 +42,16 @@ const Header = () => {
           )}
         </div>
       </div>
+      <div class="py-3 mb-4 border-bottom">
+      <div class="container d-flex flex-wrap justify-content-center">
+        <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+          <img src={dinoHeader} class="bi me-2" width="40" height="32"/>
+        </a>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search" />
+        </form>
+      </div>
+    </div>
     </header>
   );
 };

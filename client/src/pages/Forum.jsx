@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 
-import ProfileList from '../components/ProfileList';
+import ForumList from '../components/ForumList';
 
 import { QUERY_PROFILES } from '../utils/queries';
 
@@ -36,8 +36,8 @@ const handleDeletePost = async (postId) => {
 };
 
 const Forum = () => {
-  const { loading, data } = useQuery(QUERY_PROFILES);
-  const profiles = data?.profiles || [];
+const { loading, data } = useQuery(QUERY_PROFILES);
+const profiles = data?.profiles || [];
 
   return (
     <main>
@@ -47,8 +47,8 @@ const Forum = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ProfileList
-              profiles={profiles}
+            <ForumList
+              posts={''}
               title="Recent Posts:"
             />
           )}
