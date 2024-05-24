@@ -47,6 +47,7 @@ const typeDefs = `
     removePost(postId: ID!): Post
     addComment(postId: ID!, commentBody: String!): Post
     removeComment(postId: ID!, commentId: ID!): Post
+
   }
 `;
 
