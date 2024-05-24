@@ -1,27 +1,28 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   content: {
-    type: String
+    type: String,
   },
   date_created: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   profile_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Profile'
+    required: true,
+    ref: "Profile",
   },
   rawrs: {
     type: Number,
-    default: 0
-  }
+    default: 0,
+  },
 });
 
-const Post = mongoose.model('Post', postSchema);
+const Post = mongoose.model("Post", postSchema);
 
 module.exports = Post;
