@@ -3,6 +3,8 @@ import { useQuery, } from '@apollo/client';
 import { useState, useEffect } from 'react';
 import errorDino from '../assets/dinoEgg.svg'
 
+import ProfilePosts from '../components/ProfilePosts';
+
 const handleClick = (sectiontoAppend) => {
     setSection((previousSection => [...previousSection, sectionToAppend]))
 }
@@ -10,11 +12,11 @@ const handleClick = (sectiontoAppend) => {
 const ProfileTemp = () => {
     return (
         <main>
-            <section>
-                <div className="px-4 py-5" id="featured-3">
-                    <div className="col-sm-12 g-4 py-5">
-                        <div className="feature border border-2 p-4 col-8">
-                            <div className='container-fluid d-flex align-items-center'>
+            <section className='mb-0'>
+                <div className="col-sm-8 pr-4 pt-5" id="featured-3">
+                    <div className="pt-5">
+                        <div className="feature border border-2 p-4">
+                            <div className='d-flex align-items-center'>
                                 <div className="feature-icon rounded-circle d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
                                     <svg className="bi rounded" width="2em" height="2em"><use xlinkHref="#collection"></use></svg>
                                 </div>
@@ -32,6 +34,9 @@ const ProfileTemp = () => {
                             </div>
                         </div>
                     </div>
+                    
+                    <ProfilePosts />
+                    
                 </div>
             </section>
         </main>
