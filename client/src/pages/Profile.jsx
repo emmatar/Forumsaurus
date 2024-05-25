@@ -8,7 +8,7 @@ import {ADD_POST} from '../utils/mutations';
 import Auth from '../utils/auth';
 import { useState, useEffect } from 'react';
 import errorDino from '../assets/dinoEgg.svg'
-import ProfilePosts from '../components/ProfilePosts';
+import ProfilePosts from '../components/ProfileLists/Posts';
 
 const Profile = () => {
   const { profileId } = useParams(); 

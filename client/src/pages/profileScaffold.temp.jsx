@@ -3,11 +3,7 @@ import { useQuery, } from '@apollo/client';
 import { useState, useEffect } from 'react';
 import errorDino from '../assets/dinoEgg.svg'
 
-import ProfilePosts from '../components/ProfilePosts';
-
-const handleClick = (sectiontoAppend) => {
-    setSection((previousSection => [...previousSection, sectionToAppend]))
-}
+import { ProfilePosts, ProfileComments } from '../components/ProfileLists';
 
 const ProfileTemp = () => {
     return (
@@ -27,16 +23,16 @@ const ProfileTemp = () => {
                             <div className='container-fluid'>
                                 <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
                                 <div className=''>
-                                    <button onClick={handleClick} id='showUserProfile' type="button" className="btn rounded-pill border border-primary border-2 text-primary fw-bolder btn-white">Profile</button>
-                                    <button type="showUserPosts" className="btn rounded-pill border border-primary border-2 text-primary fw-bolder btn-white mx-2">Posts</button>
-                                    <button type="showUserComments" className="btn rounded-pill border border-primary border-2 text-primary fw-bolder btn-white">Comments</button>
+                                    <button id='showUserProfile' type="button" className="btn rounded-pill border border-primary border-2 text-primary fw-bolder btn-white">Profile</button>
+                                    <button id='showuserPosts' type="button" className="btn rounded-pill border border-primary border-2 text-primary fw-bolder btn-white mx-2">Posts</button>
+                                    <button id='showUserComments' type="button" className="btn rounded-pill border border-primary border-2 text-primary fw-bolder btn-white">Comments</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <ProfilePosts />
-                    
+                    <ProfileComments />
+
                 </div>
             </section>
         </main>
