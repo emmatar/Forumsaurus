@@ -8,6 +8,7 @@ import {ADD_POST} from '../utils/mutations';
 import Auth from '../utils/auth';
 import { useState, useEffect } from 'react';
 import errorDino from '../assets/dinoEgg.svg'
+import ProfilePosts from '../components/ProfileLists/Posts';
 
 const Profile = () => {
   const { profileId } = useParams(); 
@@ -61,9 +62,11 @@ const Profile = () => {
               </svg>
               Go Back
             </button>
-            <button className="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
-              Sign Up!
-            </button>
+            <a href="/signup">
+              <button className="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+                Sign Up!
+              </button>
+            </a>
           </div>
         </div>
       </div>
