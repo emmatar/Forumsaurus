@@ -40,9 +40,9 @@ const ProfilePosts = () => {
                         <img src={dinoEgg} alt="twbs" width="32" height="32" className="rounded-circle bg-warning p-1 flex-shrink-0" />
                         <div className="d-flex gap-2 w-100 justify-content-between">
                             <div>
-                                <a href="#" className="text-decoration-none text-black">
+                                <Link to="#" className="text-decoration-none text-black">
                                     <h5 className="mb-0 fw-bolder mb-2">{post.body}</h5>
-                                </a>
+                                </Link>
                                 <div className="d-flex px-0 gap-1 align-items-center">
                                     <button className="bg-primary border text-white py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start">
                                         <img src={dinoEgg} style={{ filter: 'invert(1)' }} alt="twbs" width="20" height="20" className="flex-shrink-0"></img>
