@@ -37,6 +37,13 @@ export const ADD_POST = gql`
     }
   }
 `;
+export const DELETE_POST = gql`
+  mutation deletePost($postId: ID!) {
+    deletePost(postId: $postId) {
+      _id
+    }
+  }
+`;
 
 export const ADD_COMMENT = gql`
   mutation addComment($body: String!, $profileId: ID!, $postId: ID!) {
@@ -45,6 +52,14 @@ export const ADD_COMMENT = gql`
       body
       profile_id
       post_id
+    }
+  }
+`;
+
+export const DELETE_COMMENT = gql`
+  mutation deleteComment($commentId: ID!) {
+    deleteComment(commentId: $commentId) {
+      _id
     }
   }
 `;
