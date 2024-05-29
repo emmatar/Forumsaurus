@@ -1,11 +1,17 @@
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery, } from '@apollo/client';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import errorDino from '../assets/dinoEgg.svg'
 
-import { ProfilePosts, ProfileComments } from '../components/ProfileLists';
+import { ProfileOverview, ProfilePosts, ProfileComments } from '../components/ProfileLists';
 
 const ProfileTemp = () => {
+    const [selectedTab, setSelectedtab] = useState('overview');
+
+    const handleTabClick = (tab) => {
+        setSelectedtab(tab);
+    }
+
     return (
         <main>
             <section className='mb-0'>
@@ -23,15 +29,17 @@ const ProfileTemp = () => {
                             <div className='container-fluid'>
                                 <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
                                 <div className=''>
-                                    <button id='showUserProfile' type="button" className="btn rounded-pill border border-primary border-2 text-primary fw-bolder btn-white">Profile</button>
-                                    <button id='showuserPosts' type="button" className="btn rounded-pill border border-primary border-2 text-primary fw-bolder btn-white mx-2">Posts</button>
-                                    <button id='showUserComments' type="button" className="btn rounded-pill border border-primary border-2 text-primary fw-bolder btn-white">Comments</button>
+                                    <button id='showUserOverview' onClick={() => handleTabClick('overview')} type="button" className="btn rounded-pill border border-primary border-2 text-primary fw-bolder btn-white">Profile</button>
+                                    <button id='showuserPosts' onClick={() => handleTabClick('posts')} type="button" className="btn rounded-pill border border-primary border-2 text-primary fw-bolder btn-white mx-2">Posts</button>
+                                    <button id='showUserComments' onClick={() => handleTabClick('comments')} type="button" className="btn rounded-pill border border-primary border-2 text-primary fw-bolder btn-white">Comments</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <ProfileComments />
+                    {selectedTab === 'overview' && <ProfileOverview />}
+                    {selectedTab === 'posts' && <ProfilePosts />}
+                    {selectedTab === 'comments' && <ProfileComments />}
 
                 </div>
             </section>

@@ -52,8 +52,14 @@ const ProfileComments = () => {
                                     {comment.reply}
                                 </p>
                             </div>
-                            <small className="opacity-50 text-nowrap">{comment.createdOn}</small>
-                            <button onClick={() => deleteComment(comment.id)}>Delete</button>
+                            <div className="p-0 m-0">
+                                <div class='text-nowrap'>
+                                    <small className="opacity-50 text-nowrap">{comment.createdOn}</small>
+                                </div>
+                                <a onClick={() => deleteComment(comment.id)} className="float-end">
+                                    <small className='opacity-50 text-nowrap'>Delete</small>
+                                </a>
+                            </div>
                         </div>
                     </a>
                 ))}
