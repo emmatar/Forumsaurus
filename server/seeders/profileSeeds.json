@@ -1,8 +1,10 @@
 [
   {
-    "username": "Briankernighan",
-    "email": "bkernighan@techfriends.dev",
-    "password": "password01",
+    "profile": {
+      "username": "Briankernighan",
+      "email": "bkernighan@techfriends.dev",
+      "password": "password01"
+    },
     "posts": [
       {
         "username": "Briankernighan",
@@ -17,9 +19,11 @@
     ]
   },
   {
-    "username": "Maxlexander",
-    "email": "mkanatalexander@techfriends.dev",
-    "password": "password02",
+    "profile": {
+      "username": "Maxlexander",
+      "email": "mkanatalexander@techfriends.dev",
+      "password": "password02"
+    },
     "posts": [
       {
         "username": "Maxlexander",
@@ -29,9 +33,11 @@
     ]
   },
   {
-    "username": "Amiko",
-    "email": "amiko@techfriends.dev",
-    "password": "password03",
+    "profile": {
+      "username": "Amiko",
+      "email": "amiko@techfriends.dev",
+      "password": "password03"
+    },
     "posts": [
       {
         "username": "Amiko",
@@ -41,9 +47,11 @@
     ]
   },
   {
-    "username": "Kenteck",
-    "email": "kbeck@techfriends.dev",
-    "password": "password04",
+    "profile": {
+      "username": "Kenteck",
+      "email": "kbeck@techfriends.dev",
+      "password": "password04"
+    },
     "posts": [
       {
         "username": "Kenteck",
@@ -58,9 +66,11 @@
     ]
   },
   {
-    "username": "Edwarderard",
-    "email": "evberard@techfriends.dev",
-    "password": "password05",
+    "profile": {
+      "username": "Edwarderard",
+      "email": "evberard@techfriends.dev",
+      "password": "password05"
+    },
     "posts": [
       {
         "username": "Edwarderard",
@@ -70,9 +80,11 @@
     ]
   },
   {
-    "username": "Alanay",
-    "email": "akay@techfriends.dev",
-    "password": "password06",
+    "profile": {
+      "username": "Alanay",
+      "email": "akay@techfriends.dev",
+      "password": "password06"
+    },
     "posts": [
       {
         "username": "Alanay",
