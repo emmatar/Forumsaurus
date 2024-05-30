@@ -29,7 +29,7 @@ const ForumPost = ({ post }) => {
 							<Link className='text-decoration-none text-black'>
 								<h4 className='mb-0 fw-bolder mb-2'>{post.title}</h4>
 							</Link>
-							<p className='mb-0'>{post.body}</p>
+							<p>{post.content}</p>
 							<div className='d-flex px-0 gap-1 align-items-center'>
 								<button className='btn btn-sm bg-primary border text-white py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start'>
 									{post.author}
@@ -50,12 +50,12 @@ const ForumPost = ({ post }) => {
 							</div>
 						</div>
 						<div className='p-0 m-0'>
-							<div class='text-nowrap'>
+							<div className='text-nowrap'>
 								<small className='opacity-50 text-nowrap'>
 									{post.createdOn}
 								</small>
-                            </div>
-                            {/* TODO: If logged in */}
+							</div>
+							{/* TODO: If logged in */}
 							<a
 								onClick={() => deleteComment(post.id)}
 								className='float-end'>
@@ -79,3 +79,4 @@ const ForumPost = ({ post }) => {
 };
 
 export default ForumPost;
+

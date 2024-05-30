@@ -47,6 +47,7 @@ const ProfilePosts = () => {
                                 <Link to="#" className="text-decoration-none text-black">
                                     <h5 className="mb-0 fw-bolder mb-2">{post.body}</h5>
                                 </Link>
+                                <p className="">{post.body}</p>
                                 <div className="d-flex px-0 gap-1 align-items-center">
                                     <button className="bg-primary border text-white py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start">
                                         <img src={dinoEgg} style={{ filter: 'invert(1)' }} alt="twbs" width="20" height="20" className="flex-shrink-0"></img>
@@ -59,12 +60,12 @@ const ProfilePosts = () => {
                                 </div>
                             </div>
                             <small className="opacity-50 text-nowrap">{post.createdOn}</small>
-                            <button onClick={() => deletePost(post.id)}>Delete Post</button>
-                        </div>
+{/*                             <button onClick={() => deletePost(post.id)}>Delete Post</button>
+ */}                        </div>
                     </div>
                 ))}
             </div>
-            <form onSubmit={(e) => { e.preventDefault(); addPost(); }}>
+{/*             <form onSubmit={(e) => { e.preventDefault(); addPost(); }}>
                 <input
                     type="text"
                     value={newPostBody}
@@ -73,7 +74,7 @@ const ProfilePosts = () => {
                 />
                 <button type="submit">Add Post</button>
             </form>
-        </div>
+ */}        </div>
     )
 }
 

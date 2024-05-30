@@ -47,7 +47,7 @@ const ProfileComments = () => {
                         <div className="d-flex gap-2 w-100 justify-content-between">
                             <div className="p-0 m-0">
                                 <small className="opacity-75">
-                                    <strong>ProfileUsername</strong> replied to <strong>{comment.author}</strong>'s comment, "{comment.body}"
+                                    <strong>ProfileUsername</strong> replied to <strong>{comment.author}</strong>'s comment, "{comment.content}"
                                 </small>
                                 <p className="my-2">
                                     {comment.reply}

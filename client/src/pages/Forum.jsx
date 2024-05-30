@@ -42,8 +42,7 @@ const { loading, data } = useQuery(QUERY_PROFILES);
             <div>Loading...</div>
           ) : (
             <ForumList
-              posts={''}
-              title="Recent Posts:"
+              onClick={() => {}}
             />
           )}
         <ForumPost key={post.id} post={ post } />
