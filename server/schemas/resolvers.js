@@ -1,4 +1,3 @@
-
 const { Profile, Post, Comment } = require("../models");
 
 const { signToken, AuthenticationError } = require("../utils/auth");
@@ -63,7 +62,7 @@ const resolvers = {
         const newPost = await Post.create({
           title,
           content,
-          profile: context.profile._id,
+          username: context.profile._id,
         });
 
         await Profile.findOneAndUpdate(
