@@ -14,21 +14,17 @@ const ProfilePosts = () => {
         }
     ]);
 
-    // State to store the new post body
-    const [newPostBody, setNewPostBody] = useState('');
-
     // Function to add a new post
     const addPost = () => {
         const newPost = {
             id: posts.length + 1,
-            body: newPostBody,
+            body: 'New Post Body',
             rawrs: 0,
             comments: 0,
             createdOn: '1h'
         };
 
         setPosts([...posts, newPost]);
-        setNewPostBody(''); // Clear the input field after adding the post
     }
 
     // Function to delete a post by ID
@@ -38,7 +34,7 @@ const ProfilePosts = () => {
 
     return (
         <div className="d-flex flex-column flex-row pl-0 mt-1 gap-4 pb-5 align-items-center justify-content-center">
-            <div className="list-group w-100 container-fluid">
+            <div className="list-group w-100 conatiner-fluid">
                 {posts.map(post => (
                     <div key={post.id} className="list-group-item border border-2 d-flex gap-3 py-3" aria-current="true">
                         <img src={dinoEgg} alt="twbs" width="32" height="32" className="rounded-circle bg-warning p-1 flex-shrink-0" />
@@ -64,15 +60,7 @@ const ProfilePosts = () => {
                     </div>
                 ))}
             </div>
-            <form onSubmit={(e) => { e.preventDefault(); addPost(); }}>
-                <input
-                    type="text"
-                    value={newPostBody}
-                    onChange={(e) => setNewPostBody(e.target.value)}
-                    placeholder="Enter new post body"
-                />
-                <button type="submit">Add Post</button>
-            </form>
+            <button onClick={addPost}>Add Post</button>
         </div>
     )
 }
