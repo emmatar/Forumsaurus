@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
+  username: {
+    type: String,
+  },
   title: {
     type: String,
     required: true,
@@ -12,11 +15,6 @@ const postSchema = new mongoose.Schema({
   date_created: {
     type: Date,
     default: Date.now,
-  },
-  profile: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "Profile",
   },
   comments: {
     type: mongoose.Schema.Types.ObjectId,
