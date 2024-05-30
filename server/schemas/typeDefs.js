@@ -15,7 +15,7 @@ const typeDefs = `
     title: String!
     content: String!
     date: Date
-    profile: Profile!
+    username: String
     rawrs: Int
     comments: [Comment]
   }
