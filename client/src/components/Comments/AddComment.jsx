@@ -25,5 +25,3 @@ const AddComment = () => {
         </div>
     );
 };
-
-export default AddComment;
