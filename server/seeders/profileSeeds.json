@@ -2,51 +2,83 @@
   {
     "username": "Briankernighan",
     "email": "bkernighan@techfriends.dev",
-    "password": "password01"
+    "password": "password01",
+    "posts": [
+      {
+        "username": "Briankernighan",
+        "title": "Are Dinosaurs still Alive?",
+        "content": "I just saw a crocodile the other day and wondered."
+      },
+      {
+        "username": "Briankernighan",
+        "title": "New flying dinosaur skeleton discovered!",
+        "content": "In the Isle of Skye in Scotland, the discovery of a winged dinosaur skeleton that was found."
+      }
+    ]
   },
   {
     "username": "Maxlexander",
     "email": "mkanatalexander@techfriends.dev",
-    "password": "password02"
+    "password": "password02",
+    "posts": [
+      {
+        "username": "Maxlexander",
+        "title": "Do T-rex's really sound like ducks?",
+        "content": "Was watching Jurassic Park the other night and that HUGE T-Rex sounded like my pet duck Larry."
+      }
+    ]
   },
   {
     "username": "Amiko",
     "email": "amiko@techfriends.dev",
-    "password": "password03"
+    "password": "password03",
+    "posts": [
+      {
+        "username": "Amiko",
+        "title": "Largest Dinosaur!",
+        "content": "The Titanosaur Patagotitan Mayorum was almost as long as a Boeing 737. Why is that so hard to believe."
+      }
+    ]
   },
   {
     "username": "Kenteck",
     "email": "kbeck@techfriends.dev",
-    "password": "password04"
+    "password": "password04",
+    "posts": [
+      {
+        "username": "Kenteck",
+        "title": "A sharp-clawed dinosaur munched plants",
+        "content": "The Troodon dinosaur were hungry for greens as well as small prey. Even though Troodon had sharp teeth and sharp foot claws to pin lizards, mammals and other morsels, it seems this dinosaur often preferred plants and left most of the hunting to sharper-toothed relatives."
+      },
+      {
+        "username": "Kenteck",
+        "title": "What does the name \"dinosaur\" mean?",
+        "content": "A monstrous LIZARD...ew!"
+      }
+    ]
   },
   {
     "username": "Edwarderard",
     "email": "evberard@techfriends.dev",
-    "password": "password05"
+    "password": "password05",
+    "posts": [
+      {
+        "username": "Edwarderard",
+        "title": "Did anybody know that there were 3 era's of creatures?",
+        "content": "Dinosaurs lived during the Mesozoic Era, also known as the \"Age of Dinosaurs\". This era had three periods: Triassic, Jurassic, and Cretaceous, each with different dinosaurs."
+      }
+    ]
   },
   {
     "username": "Alanay",
     "email": "akay@techfriends.dev",
-    "password": "password06"
-  },
-  {
-    "username": "oare",
-    "email": "choare@techfriends.dev",
-    "password": "password07"
-  },
-  {
-    "username": "Davidomas",
-    "email": "dthomas@techfriends.dev",
-    "password": "password08"
-  },
-  {
-    "username": "Donalnuth",
-    "email": "dknuth@techfriends.dev",
-    "password": "password09"
-  },
-  {
-    "username": "Lernantino",
-    "email": "lernantino@techfriends.dev",
-    "password": "password10"
+    "password": "password06",
+    "posts": [
+      {
+        "username": "Alanay",
+        "title": "Discovery of a new sourther dinosaur!",
+        "content": "Named the \"Gonkoken nanoi\", the dinosaur superficially resembles hadrosaurs like the famous Edmontosaurus!"
+      }
+    ]
   }
 ]
