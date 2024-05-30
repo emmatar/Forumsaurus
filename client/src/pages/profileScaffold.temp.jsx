@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import errorDino from '../assets/dinoEgg.svg'
 
 import { ProfileOverview, ProfilePosts, ProfileComments } from '../components/ProfileLists';
+import CommentCard from '../components/Comments/Card';
 
 const ProfileTemp = () => {
     const [selectedTab, setSelectedtab] = useState('overview');
@@ -11,6 +12,16 @@ const ProfileTemp = () => {
     const handleTabClick = (tab) => {
         setSelectedtab(tab);
     }
+
+    const comments = [
+        {
+            id: 1,
+            author: 'CommentAuthor',
+            body: 'CommentBody',
+            reply: 'ReplyBody',
+            createdOn: '1d'
+        }
+    ];
 
     return (
         <main>
@@ -37,10 +48,13 @@ const ProfileTemp = () => {
                         </div>
                     </div>
                     
-                    {selectedTab === 'overview' && <ProfileOverview />}
-                    {selectedTab === 'posts' && <ProfilePosts />}
-                    {selectedTab === 'comments' && <ProfileComments />}
-
+                    <div className="d-flex flex-column flex-row pl-0 mt-1 gap-4 pb-5 align-items-center justify-content-center">
+                        <div className="list-group w-100 conatiner-fluid">
+                            {selectedTab === 'overview' && <ProfileOverview />}
+                            {selectedTab === 'posts' && <ProfilePosts />}
+                            {selectedTab === 'comments' && comments.map((comment) => <CommentCard key={comment.id} comment={comment} />)}
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

@@ -50,4 +50,8 @@ export const QUERY_ME = gql`
 
 /* TODO: Write QUERY_POSTS */
 
-/* TODO: Write QUERY_POST */
+/* TODO: Write QUERY_SINGLE_POST */
+
+/* TODO: Write QUERY_COMMENTS */
+
+/* TODO: Write QUERY_SINGLE_COMMENT */

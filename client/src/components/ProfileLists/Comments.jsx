@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import dinoEgg from "../../assets/dinoEgg.svg";
+import CommentCard from '../Comments/Card';
 
 const ProfileComments = () => {
     // State to store comments
@@ -64,8 +65,8 @@ const ProfileComments = () => {
                     </a>
                 ))}
             </div>
-            <button onClick={addComment}>Add Comment</button>
-        </div>
+{/*             <button onClick={addComment}>Add Comment</button>
+ */}        </div>
     )
 }
 
