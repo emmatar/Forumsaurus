@@ -48,6 +48,12 @@ export const QUERY_ME = gql`
   }
 `;
 
-/* TODO: Write QUERY_POSTS */
-
-/* TODO: Write QUERY_POST */
+export const QUERY_POSTS = gql`
+  query Query {
+    posts {
+      username
+      title
+      content
+    }
+  }
+`;
