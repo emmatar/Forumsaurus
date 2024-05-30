@@ -19,7 +19,23 @@ const ProfileTemp = () => {
             author: 'CommentAuthor',
             body: 'CommentBody',
             reply: 'ReplyBody',
-            createdOn: '1d'
+            createdOn: '1d',
+            comments: [
+                {
+                    id: 1,
+                    author: 'CommentAuthor',
+                    body: 'CommentBody',
+                    reply: 'ReplyBody',
+                    createdOn: '1d',
+                },
+                {
+                    id: 2,
+                    author: 'CommentAuthor',
+                    body: 'CommentBody',
+                    reply: 'ReplyBody',
+                    createdOn: '1d',
+                },
+            ]
         }
     ];
 
