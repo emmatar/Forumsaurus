@@ -11,6 +11,7 @@ const { loading, data } = useQuery(QUERY_PROFILES);
   
   const post = {
     id: 1,
+    author: 'Test Author',
     title: 'Test Title',
     body: 'Test Body',
     rawrs: 0,
