@@ -54,8 +54,6 @@ export const QUERY_POSTS = gql`
       username
       title
       content
-      comments
-      rawrs
     }
   }
 `;
