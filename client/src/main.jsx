@@ -13,7 +13,7 @@ import ProfileTemp from './pages/profileScaffold.temp.jsx'
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Error from './pages/Error';
-
+import NewPost from './pages/NewPost.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -39,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/profileTemp',
         element: <ProfileTemp />
+      },
+      {
+        path:  '/NewPost',
+        element: <NewPost/>
       }
     ]
   }

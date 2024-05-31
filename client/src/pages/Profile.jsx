@@ -91,7 +91,7 @@ const Profile = () => {
           </div>
         );
       })}
-      <Link to="/Posts">Create a Post</Link>
+      <Link to="/NewPost">Create a Post</Link>
     </div>
   );
 }
