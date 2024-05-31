@@ -9,10 +9,7 @@ const Profile = () => {
   const { profileId } = useParams();
 
   const { loading, data } = useQuery(
-    profileId ? QUERY_SINGLE_PROFILE : QUERY_ME,
-    {
-      variables: { profileId: profileId },
-    }
+    profileId ? QUERY_SINGLE_PROFILE : QUERY_ME, { variables: { profileId: profileId }, }
   );
 
   const profile = data?.me || data?.profile;
@@ -86,7 +83,7 @@ const Profile = () => {
                   </svg>
                 </div>
                 <div className="ms-3">
-                  <h3 className="fs-2 text-body-emphasis">USERNAME</h3>
+                  <h3 className="fs-2 text-body-emphasis">{USERNAME}</h3>
                 </div>
               </div>
               <div className="container-fluid">
