@@ -1,12 +1,12 @@
-import { useQuery } from '@apollo/client';
+import { useQuery } from "@apollo/client";
 
-import ForumList from '../components/ForumList';
+import ForumList from "../components/ForumList";
 
-import { QUERY_PROFILES } from '../utils/queries';
+import { QUERY_POSTS } from "../utils/queries";
 
 const Forum = () => {
-const { loading, data } = useQuery(QUERY_PROFILES);
-const profiles = data?.profiles || [];
+  const { loading, data } = useQuery(QUERY_POSTS);
+  const posts = data?.posts || [];
 
   return (
     <main>
@@ -15,10 +15,7 @@ const profiles = data?.profiles || [];
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ForumList
-              posts={''}
-              title="Recent Posts:"
-            />
+            <ForumList posts={posts} title="Recent Posts:" />
           )}
         </div>
       </div>
