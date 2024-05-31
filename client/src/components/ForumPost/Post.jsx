@@ -4,9 +4,6 @@ import dinoEgg from '../../assets/dinoEgg.svg';
 import CommentCard from '../Comments/Card';
 import AddComment from '../Comments/AddComment';
 
-// TODO: Logic to fetch posts
-
-// TODO: Logic to fetch comments
 
 const ForumPost = ({ post }) => {
 
