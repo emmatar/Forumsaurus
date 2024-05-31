@@ -1,17 +1,29 @@
+import { useMutation } from "@apollo/client";
+import { EDIT_BIO } from "../../utils/mutations";
 import { useState } from "react";
+import { QUERY_ME } from "../../utils/queries";
+import { Form, Button, Modal } from "react-bootstrap";
 
-function EditBio() {
-  const [show, setShow] = useState(false);
+export const EditBio = ({ show, handleClose }) => {
+  const [newBio, setNewBio] = useState("");
+  const [error, setError] = useState(false);
+  const [editBio] = useMutation(EDIT_BIO);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!newBio) {
+      setError(true);
+      return;
+    }
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+    await editBio({
+      variables: { bio: newBio },
+      refetchQueries: [QUERY_ME, "me"],
+    });
+    handleClose();
+  };
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
-      </Button>
-
       <Modal
         show={show}
         onHide={handleClose}
@@ -22,18 +34,29 @@ function EditBio() {
           <Modal.Title>Modal title</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          I will not close if you click outside me. Do not even try to press
-          escape key.
+          <Form>
+            <Form.Group>
+              <Form.Label>Update Bio</Form.Label>
+              <Form.Control
+                className={error ? "has-error" : ""}
+                type="text"
+                value={newBio}
+                onChange={(e) => setNewBio(e.target.value)}
+              />
+            </Form.Group>
+          </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Understood</Button>
+          <Button variant="primary" onClick={handleSubmit}>
+            Understood
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
   );
-}
+};
 
 export default EditBio;

@@ -4,12 +4,20 @@ import { QUERY_SINGLE_PROFILE, QUERY_ME } from "../utils/queries";
 import Auth from "../utils/auth";
 import errorDino from "../assets/dinoEgg.svg";
 import ProfilePostsCont from "../components/ProfilePostsCont";
+import EditBio from "../components/Bio/index.jsx";
+import Button from "react-bootstrap/esm/Button";
+import { useState } from "react";
 
 const Profile = () => {
   const { profileId } = useParams();
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const { loading, data } = useQuery(
-    profileId ? QUERY_SINGLE_PROFILE : QUERY_ME, { variables: { profileId: profileId }, }
+    profileId ? QUERY_SINGLE_PROFILE : QUERY_ME,
+    { variables: { profileId: profileId } }
   );
 
   const profile = data?.me || data?.profile;
@@ -70,36 +78,45 @@ const Profile = () => {
   }
 
   return (
-    <div>
-      {!profile?.posts?.length && <h2>No Posts Yet</h2>}
-      <section className="mb-0">
-        <div className="col-sm-8 pr-4 pt-5" id="featured-3">
-          <div className="pt-5">
-            <div className="feature border border-2 p-4">
-              <div className="d-flex align-items-center">
-                <div className="feature-icon rounded-circle d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                  <svg className="bi rounded" width="2em" height="2em">
-                    <use xlinkHref="#collection"></use>
-                  </svg>
+    <>
+      <div>
+        {!profile?.posts?.length && <h2>No Posts Yet</h2>}
+        <section className="mb-0">
+          <div className="col-sm-8 pr-4 pt-5" id="featured-3">
+            <div className="pt-5">
+              <div className="feature border border-2 p-4">
+                <div className="d-flex align-items-center">
+                  <div className="feature-icon rounded-circle d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <svg className="bi rounded" width="2em" height="2em">
+                      <use xlinkHref="#collection"></use>
+                    </svg>
+                  </div>
+                  <div className="ms-3">
+                    <h3 className="fs-2 text-body-emphasis">
+                      {profile.username}
+                    </h3>
+                  </div>
                 </div>
-                <div className="ms-3">
-                  <h3 className="fs-2 text-body-emphasis">{profile.username}</h3>
+                <div className="container-fluid">
+                  <Button variant="primary" onClick={handleShow}>
+                    Launch static backdrop modal
+                  </Button>
+                  <p>
+                    Paragraph of text beneath the heading to explain the
+                    heading. We'll add onto it with another sentence and
+                    probably just keep going until we run out of words.
+                  </p>
                 </div>
-              </div>
-              <div className="container-fluid">
-                <p>
-                  Paragraph of text beneath the heading to explain the heading.
-                  We'll add onto it with another sentence and probably just keep
-                  going until we run out of words.
-                </p>
               </div>
             </div>
+            <ProfilePostsCont posts={profile.posts} />
           </div>
-          <ProfilePostsCont posts={profile.posts} />
-        </div>
-      </section>
-      <Link to="/Posts">Create a Post</Link>
-    </div>
+        </section>
+        <Link to="/Posts">Create a Post</Link>
+      </div>
+
+      <EditBio show={show} handleClose={handleClose} />
+    </>
   );
 };
 

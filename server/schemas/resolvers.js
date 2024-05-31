@@ -49,6 +49,15 @@ const resolvers = {
       const token = signToken(profile);
       return { token, profile };
     },
+    editBio: async (parent, { bio }, context) => {
+      if (context.profile) {
+        return Profile.findByIdAndUpdate(
+          context.profile._id,
+          { bio },
+          { new: true }
+        );
+      }
+    },
     // Set up mutation so a logged in user can only remove their profile and no one else's
     removeProfile: async (parent, args, context) => {
       if (context.profile) {
