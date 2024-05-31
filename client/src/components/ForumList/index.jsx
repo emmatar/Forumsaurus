@@ -7,7 +7,16 @@ const ProfilePosts = () => {
     const [posts, setPosts] = useState([
         {
             id: 1,
-            body: 'Post Body 1',
+            body: 'Post Title 1',
+            content: 'Post Content 1',
+            rawrs: 0,
+            comments: 0,
+            createdOn: '1d'
+        },
+        {
+            id: 2,
+            body: 'Post Title 2',
+            content: 'Post Content 2',
             rawrs: 0,
             comments: 0,
             createdOn: '1d'
@@ -40,22 +49,25 @@ const ProfilePosts = () => {
         <div className="d-flex flex-column flex-row pl-0 mt-1 gap-4 pb-5 align-items-center justify-content-center">
             <div className="list-group w-100 container-fluid">
                 {posts.map(post => (
-                    <div key={post.id} className="list-group-item border border-2 d-flex gap-3 py-3" aria-current="true">
+                    <div key={post.id} className="list-group-item d-flex gap-3 py-3" aria-current="true">
                         <img src={dinoEgg} alt="twbs" width="32" height="32" className="rounded-circle bg-warning p-1 flex-shrink-0" />
                         <div className="d-flex gap-2 w-100 justify-content-between">
                             <div>
-                                <Link to="#" className="text-decoration-none text-black">
-                                    <h5 className="mb-0 fw-bolder mb-2">{post.body}</h5>
+                                <Link to="#" className="text-decoration-none mb-0 text-black">
+                                    <h5 className="mb-0 fw-bolder mb-0">{post.body}</h5>
                                 </Link>
-                                <p className="">{post.body}</p>
+                                <Link>
+                                    <small className="opacity-75">{post.author || 'Anonymous'}</small>
+                                </Link>
+                                <p className="">{post.content}</p>
                                 <div className="d-flex px-0 gap-1 align-items-center">
                                     <button className="bg-primary border text-white py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start">
-                                        <img src={dinoEgg} style={{ filter: 'invert(1)' }} alt="twbs" width="20" height="20" className="flex-shrink-0"></img>
-                                        <p className="mb-0">{post.rawrs} rawr!'s</p>
+                                        <img src={dinoEgg} style={{ filter: 'invert(1)' }} alt="twbs" width="16" height="16" className="flex-shrink-0"></img>
+                                        <p className="mb-0">{post.rawrs.length || '0'} rawr!'s</p>
                                     </button>
                                     <button className="bg-primary border text-white py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start">
-                                        <img src={dinoEgg} style={{ filter: 'invert(1)' }} alt="twbs" width="20" height="20" className="flex-shrink-0"></img>
-                                        <p className="mb-0">{post.comments} comments</p>
+                                        <img src={dinoEgg} style={{ filter: 'invert(1)' }} alt="twbs" width="16" height="16" className="flex-shrink-0"></img>
+                                        <p className="mb-0">{post.comments.length || '0'} comments</p>
                                     </button>
                                 </div>
                             </div>
