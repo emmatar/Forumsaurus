@@ -12,9 +12,9 @@ const ProfilePosts = ({ posts }) => {
   return (
     <div className="d-flex flex-column flex-row pl-0 mt-1 gap-4 pb-5 align-items-center justify-content-center">
       <div className="list-group w-100 conatiner-fluid">
-        {posts.map((post, index) => (
+        {posts.map((post) => (
           <div
-            key={post.id}
+            key={post._id}
             className="list-group-item border border-2 d-flex gap-3 py-3"
             aria-current="true"
           >
