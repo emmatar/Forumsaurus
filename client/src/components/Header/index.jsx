@@ -29,6 +29,9 @@ const Header = () => {
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
+              <Link className="btn btn-lg btn-primary border border-2 border-light fw-medium text-light m-2" to="/newpost">
+                Create A Post
+              </Link>
             </>
           ) : (
             <>
@@ -42,9 +45,6 @@ const Header = () => {
                 TEST
               </Link>
               {/* Add the Link to NewPost component */}
-              <Link className="btn btn-lg btn-primary border border-2 border-light fw-medium text-light m-2" to="/newpost">
-                Create A Post
-              </Link>
             </>
           )}
         </div>
