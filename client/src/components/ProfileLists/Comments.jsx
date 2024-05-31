@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import dinoEgg from "../../assets/dinoEgg.svg";
+import CommentCard from '../Comments/Card';
 
 const ProfileComments = () => {
     // State to store comments
@@ -46,20 +47,26 @@ const ProfileComments = () => {
                         <div className="d-flex gap-2 w-100 justify-content-between">
                             <div className="p-0 m-0">
                                 <small className="opacity-75">
-                                    <strong>ProfileUsername</strong> replied to <strong>{comment.author}</strong>'s comment, "{comment.body}"
+                                    <strong>ProfileUsername</strong> replied to <strong>{comment.author}</strong>'s comment, "{comment.content}"
                                 </small>
                                 <p className="my-2">
                                     {comment.reply}
                                 </p>
                             </div>
-                            <small className="opacity-50 text-nowrap">{comment.createdOn}</small>
-                            <button onClick={() => deleteComment(comment.id)}>Delete</button>
+                            <div className="p-0 m-0">
+                                <div class='text-nowrap'>
+                                    <small className="opacity-50 text-nowrap">{comment.createdOn}</small>
+                                </div>
+                                <a href="#" onClick={() => deleteComment(comment.id)} className="float-end">
+                                    <small className='opacity-50 text-nowrap'>Delete</small>
+                                </a>
+                            </div>
                         </div>
                     </a>
                 ))}
             </div>
-            <button onClick={addComment}>Add Comment</button>
-        </div>
+{/*             <button onClick={addComment}>Add Comment</button>
+ */}        </div>
     )
 }
 

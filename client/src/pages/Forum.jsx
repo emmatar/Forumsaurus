@@ -1,8 +1,9 @@
 import { useQuery } from "@apollo/client";
 
-import ForumList from "../components/ForumList";
+import ForumList from '../components/ForumList';
+import ForumPost from '../components/ForumPost/Post';
 
-import { QUERY_POSTS } from "../utils/queries";
+import { QUERY_POSTS } from '../utils/queries';
 
 const Forum = () => {
   const { loading, data } = useQuery(QUERY_POSTS);
