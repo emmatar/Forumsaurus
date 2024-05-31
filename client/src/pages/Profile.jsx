@@ -83,7 +83,7 @@ const Profile = () => {
                   </svg>
                 </div>
                 <div className="ms-3">
-                  <h3 className="fs-2 text-body-emphasis">{USERNAME}</h3>
+                  <h3 className="fs-2 text-body-emphasis">{profile.username}</h3>
                 </div>
               </div>
               <div className="container-fluid">
