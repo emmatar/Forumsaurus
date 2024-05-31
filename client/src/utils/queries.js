@@ -21,6 +21,7 @@ export const QUERY_SINGLE_PROFILE = gql`
     profile(profileId: $profileId) {
       _id
       username
+      bio
       posts {
         _id
         title
@@ -37,6 +38,7 @@ export const QUERY_ME = gql`
     me {
       _id
       username
+      bio
       posts {
         _id
         title

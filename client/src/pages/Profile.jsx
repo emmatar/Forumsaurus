@@ -98,14 +98,10 @@ const Profile = () => {
                   </div>
                 </div>
                 <div className="container-fluid">
-                  <Button variant="primary" onClick={handleShow}>
-                    Launch static backdrop modal
+                  <Button className="btn btn-sm bg-primary border text-white py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start" variant="primary" onClick={handleShow}>
+                    Edit Bio
                   </Button>
-                  <p>
-                    Paragraph of text beneath the heading to explain the
-                    heading. We'll add onto it with another sentence and
-                    probably just keep going until we run out of words.
-                  </p>
+                  <p>{profile.bio}</p>
                 </div>
               </div>
             </div>
