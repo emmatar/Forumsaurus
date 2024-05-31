@@ -49,7 +49,7 @@ export const QUERY_ME = gql`
 `;
 
 export const QUERY_POSTS = gql`
-  query Query {
+  query Posts {
     posts {
       username
       title
