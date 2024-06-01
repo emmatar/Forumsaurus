@@ -31,7 +31,7 @@ export const EditBio = ({ show, handleClose }) => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Bio</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -51,7 +51,7 @@ export const EditBio = ({ show, handleClose }) => {
             Close
           </Button>
           <Button variant="primary" onClick={handleSubmit}>
-            Understood
+            Submit
           </Button>
         </Modal.Footer>
       </Modal>
