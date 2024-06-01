@@ -58,6 +58,7 @@ const resolvers = {
     },
 
     addPost: async (parent, { title, content }, context) => {
+      console.log(context.profile)
       if (context.profile) {
         const newPost = await Post.create({
           title,
@@ -69,8 +70,10 @@ const resolvers = {
           { _id: context.profile._id },
           { $addToSet: { posts: newPost._id } }
         );
+
         return newPost;
       }
+      console.log('error')
       throw AuthenticationError;
     },
     addComment: async (parent, { postId, commentBody }, context) => {
