@@ -1,49 +1,48 @@
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom/dist'
-import './index.css'
-import './scss/styles.scss'
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom/dist";
+import "./index.css";
+import "./scss/styles.scss";
 
 // Import all of Bootstrap's JS
-import * as bootstrap from 'bootstrap'
+// import * as bootstrap from 'bootstrap'
 
-import App from './App.jsx'
-import Forum from './pages/Forum';
-import Profile from './pages/Profile';
-import ProfileTemp from './pages/profileScaffold.temp.jsx'
-import Signup from './pages/Signup';
-import Login from './pages/Login';
-import Error from './pages/Error';
+import App from "./App.jsx";
+import Forum from "./pages/Forum";
+import Profile from "./pages/Profile";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import Error from "./pages/Error";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     error: <Error />,
     children: [
       {
         index: true,
-        element: <Forum />
-      }, {
-        path: '/login',
-        element: <Login />
-      }, {
-        path: '/signup',
-        element: <Signup />
-      }, {
-        path: '/me',
-        element: <Profile />
-      }, {
-        path: '/profiles/:profileId',
-        element: <Profile />
+        element: <Forum />,
       },
       {
-        path: '/profileTemp',
-        element: <ProfileTemp />
-      }
-    ]
-  }
-])
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
+      },
+      {
+        path: "/me",
+        element: <Profile />,
+      },
+      {
+        path: "/profiles/:profileId",
+        element: <Profile />,
+      },
+    ],
+  },
+]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
-)
+);

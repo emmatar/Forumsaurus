@@ -24,11 +24,11 @@ const ProfilePosts = ({ posts, title }) => {
                                 <div className="d-flex px-0 gap-1 align-items-center">
                                     <button className="bg-primary border text-white py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start">
                                         <img src={dinoEgg} style={{ filter: 'invert(1)' }} alt="twbs" width="16" height="16" className="flex-shrink-0"></img>
-                                        <p className="mb-0">{post.rawrs.length || '0'} rawr!'s</p>
+                                        <p className="mb-0">{post.rawrs || '0'} rawr!'s</p>
                                     </button>
                                     <button className="bg-primary border text-white py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start">
                                         <img src={dinoEgg} style={{ filter: 'invert(1)' }} alt="twbs" width="16" height="16" className="flex-shrink-0"></img>
-                                        <p className="mb-0">{post.comments.length || '0'} comments</p>
+                                        <p className="mb-0">{post.comments || '0'} comments</p>
                                     </button>
                                 </div>
                             </div>

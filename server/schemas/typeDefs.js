@@ -43,6 +43,7 @@ const typeDefs = `
     removeProfile: Profile
     login(email: String!, password: String!): Auth
 
+    editBio(bio: String!): Profile
     addPost(title: String!, content: String!): Post
     removePost(postId: ID!): Post
     addComment(postId: ID!, commentBody: String!): Post
