@@ -111,7 +111,6 @@ const Profile = () => {
             <ProfilePostsCont posts={profile.posts} />
           </div>
         </section>
-        <Link to="/Posts">Create a Post</Link>
       </div>
 
       <EditBio show={show} handleClose={handleClose} />
