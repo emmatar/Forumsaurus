@@ -91,18 +91,21 @@ const Profile = () => {
                       <use xlinkHref="#collection"></use>
                     </svg>
                   </div>
-                  <div className="ms-3">
+                  <div className="d-flex ms-3">
                     <h3 className="fs-2 text-body-emphasis">
                       {profile.username}
                     </h3>
+                    <Button
+                      className="btn btn-sm bg-primary border text-white ms-4 mb-3 py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start"
+                      variant="primary"
+                      onClick={handleShow}
+                    >
+                      Edit Bio
+                    </Button>
                   </div>
                 </div>
-                <div className="container-fluid">
-                  <Button className="btn btn-sm bg-primary border text-white py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start" variant="primary" onClick={handleShow}>
-                    Edit Bio
-                  </Button>
-                  <p>{profile.bio}</p>
-                </div>
+
+                <p>{profile.bio}</p>
               </div>
             </div>
             <ProfilePostsCont posts={profile.posts} />
