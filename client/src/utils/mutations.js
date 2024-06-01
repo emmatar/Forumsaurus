@@ -44,6 +44,15 @@ export const DELETE_POST = gql`
   }
 `;
 
+export const EDIT_BIO = gql`
+  mutation editBio($bio: String!) {
+    editBio(bio: $bio) {
+      _id
+      bio
+    }
+  }
+`;
+
 export const ADD_COMMENT = gql`
   mutation addComment($body: String!, $profileId: ID!, $postId: ID!) {
     addComment(body: $body, profileId: $profileId, postId: $postId) {

@@ -17,6 +17,10 @@ $dark: rgb(46, 46, 46);
 //$font-family-sans-serif: "San Francisco", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 //$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
 //$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:       "San Francisco" !default;
+$font-family-base: "San Francisco" !default;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+.has-error {
+  border: 1px solid $danger;
+}

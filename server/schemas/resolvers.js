@@ -11,7 +11,7 @@ const resolvers = {
       });
     },
     posts: async () => {
-      return await Post.find().populate("comments");
+      return await Post.find().populate("rawrs").populate("comments");
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
@@ -48,6 +48,15 @@ const resolvers = {
 
       const token = signToken(profile);
       return { token, profile };
+    },
+    editBio: async (parent, { bio }, context) => {
+      if (context.profile) {
+        return Profile.findByIdAndUpdate(
+          context.profile._id,
+          { bio },
+          { new: true }
+        );
+      }
     },
     // Set up mutation so a logged in user can only remove their profile and no one else's
     removeProfile: async (parent, args, context) => {
