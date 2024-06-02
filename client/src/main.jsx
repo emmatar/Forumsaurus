@@ -12,6 +12,7 @@ import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Error from "./pages/Error";
+import NewPost from "./pages/NewPost.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         path: "/profiles/:profileId",
         element: <Profile />,
       },
+      {
+        path: "/newpost",
+        element: <NewPost/>
+      }
     ],
   },
 ]);

@@ -7,14 +7,17 @@ db.once("open", async () => {
   await cleanDB("Profile", "profiles");
   await cleanDB("Post", "posts");
 
+  for (const prof of profileSeeds) {
+   
+    const newProfile = await Profile.create({ ...prof.profile });
+    const newProfilePosts = []
+    for (const post of prof.posts){
+      const newPost = await Post.create({...post,profile: newProfile._id });
+      newProfilePosts.push(newPost)
 
-  for (const { profile, posts } of profileSeeds) {
-    let postIds = [];
-    for (const post of posts) {
-      const { _id } = await Post.create(post);
-      postIds.push(_id);
     }
-    await Profile.create({ ...profile, posts: postIds });
+    newProfile.posts = newProfilePosts.map((p)=>p._id)
+    newProfile.save()
   }
 
   console.log("all done!");

@@ -11,7 +11,7 @@ const resolvers = {
       });
     },
     posts: async () => {
-      return await Post.find().populate("rawrs").populate("comments");
+      return await Post.find().populate({path:"rawrs",path:"comments",path:"profile"});
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
@@ -72,7 +72,7 @@ const resolvers = {
         const newPost = await Post.create({
           title,
           content,
-          username: context.profile._id,
+          profile: context.profile._id,
         });
 
         await Profile.findOneAndUpdate(
