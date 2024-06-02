@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import dinoEgg from "../assets/dinoEgg.svg";
 import { useMutation, useQuery } from "@apollo/client";
-import { ADD_POST } from "../utils/mutations";
+import { ADD_POST, REMOVE_POST } from "../utils/mutations";
 import { QUERY_POSTS } from "../utils/queries";
 
 const ProfilePosts = ({ username }) => {
   const {loading,data} = useQuery(QUERY_POSTS)
   const posts = data?.posts ?? []
  const [addPost] = useMutation(ADD_POST)
+ const [removePost] = useMutation(REMOVE_POST)
 const [newPostTitle, setNewPostTitle] = useState('')
 const [newPostBody, setNewPostBody] = useState('')
 const addNewPost = async () => {
@@ -24,8 +25,14 @@ const addNewPost = async () => {
   })
 }
   // Function to delete a post by ID
-  const deletePost = (id) => {
-    
+  const handleDeletePost = async (id) => {
+    console.log(id)
+    await removePost({
+      variables: {
+        postId: id
+      },
+      refetchQueries: [QUERY_POSTS,"posts"]
+    })
   };
 
   // Function to add a new comment to a post
@@ -83,10 +90,10 @@ const addNewPost = async () => {
                   onChange={(e) => setNewComment(e.target.value)}
                   placeholder="Enter new comment"
                 /> */}
-                <button onClick={() => addComment(post.id)}>Add Comment</button>
+                <button onClick={() => addComment(post._id)}>Add Comment</button>
               </div>
               <small className="opacity-50 text-nowrap">{post.createdOn}</small>
-              <button onClick={() => deletePost(post.id)}>Delete Post</button>
+              <button onClick={() => handleDeletePost(post._id)}>Delete Post</button>
             </div>
           </div>
         ))}

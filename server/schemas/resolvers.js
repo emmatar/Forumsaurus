@@ -67,7 +67,7 @@ const resolvers = {
     },
 
     addPost: async (parent, { title, content }, context) => {
-      console.log(context.profile)
+      
       if (context.profile) {
         const newPost = await Post.create({
           title,
@@ -103,8 +103,11 @@ const resolvers = {
       throw AuthenticationError;
     },
     removePost: async (parent, { postId }, context) => {
-      if (context.user) {
+      console.log("deleting post")
+
+      if (context.profile) {
         const deletedPost = await Post.findOneAndDelete({ _id: postId });
+        console.log(deletedPost)
 
         await Profile.findOneAndUpdate(
           { _id: context.profile._id },
