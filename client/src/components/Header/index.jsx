@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
-
-import Auth from "../../utils/auth";
-
-import dinoHeader from "../../assets/dinoHeader.svg";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
+import dinoHeader from '../../assets/dinoHeader.svg';
 
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
+
   return (
     <header className="shadow-lg bg-primary text-light mb-4 py-3 display-flex align-center">
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
@@ -32,6 +32,9 @@ const Header = () => {
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
+              <Link className="btn btn-lg btn-primary border border-2 border-light fw-medium text-light m-2" to="/newpost">
+                Create A Post
+              </Link>
             </>
           ) : (
             <>
@@ -47,6 +50,10 @@ const Header = () => {
               >
                 Signup
               </Link>
+              <Link className="btn btn-lg btn-warning border border-2 border-warning fw-bold fw-medium text-light m-2" to="/profileTemp">
+                TEST
+              </Link>
+              {/* Add the Link to NewPost component */}
             </>
           )}
         </div>

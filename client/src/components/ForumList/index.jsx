@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 import dinoEgg from "../../assets/dinoEgg.svg";
 
 const ProfilePosts = ({ posts, title }) => {
-    // State to store posts
-
-
     return (
         <div className="d-flex flex-column flex-row pl-0 mt-1 gap-4 pb-5 align-items-center justify-content-center">
             <div className="list-group w-100 container-fluid">
-                {posts.map(post => (
+                {Array.isArray(posts) && posts.map(post => (
                     <div key={post._id} className="list-group-item border border-2 d-flex gap-3 py-3" aria-current="true">
                         <img src={dinoEgg} alt="twbs" width="32" height="32" className="rounded-circle bg-warning p-1 flex-shrink-0" />
                         <div className="d-flex gap-2 w-100 justify-content-between">
@@ -32,23 +29,12 @@ const ProfilePosts = ({ posts, title }) => {
                                     </button>
                                 </div>
                             </div>
-                            {/* <small className="opacity-50 text-nowrap">{post.createdOn}</small> */}
-                            {/* <button onClick={() => deletePost(post.id)}>Delete Post</button> */}
                         </div>
                     </div>
                 ))}
             </div>
-            {/* <form onSubmit={(e) => { e.preventDefault(); addPost(); }}>
-                <input
-                    type="text"
-                    value={newPostBody}
-                    onChange={(e) => setNewPostBody(e.target.value)}
-                    placeholder="Enter new post body"
-                />
-                <button type="submit">Add Post</button>
-            </form> */}
         </div>
-    )
+    );
 }
 
 export default ProfilePosts;

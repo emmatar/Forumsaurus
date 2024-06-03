@@ -11,7 +11,7 @@ const ProfileComments = () => {
             author: 'CommentAuthor',
             body: 'CommentBody',
             reply: 'ReplyBody',
-            createdOn: '1d' // Example creation time
+            createdOn: '1d'
         }
     ]);
 
@@ -22,7 +22,7 @@ const ProfileComments = () => {
             author: 'NewCommentAuthor',
             body: 'NewCommentBody',
             reply: 'NewReplyBody',
-            createdOn: '1h' // Example creation time
+            createdOn: '1h' 
         };
 
         setComments([...comments, newComment]);
@@ -37,11 +37,11 @@ const ProfileComments = () => {
         <div className="d-flex flex-column flex-row pl-0 mt-1 gap-4 pb-5 align-items-center justify-content-center">
             <div className="list-group w-100 conatiner-fluid">
                 {comments.map(comment => (
-                    <a
-                        key={comment.id}
-                        href="#"
-                        className="list-group-item list-group-item-action border border-2 d-flex gap-3 py-3"
-                        aria-current="true"
+    <Link
+        key={comment.id}
+        to="#"
+        className="list-group-item list-group-item-action border border-2 d-flex gap-3 py-3"
+        aria-current="true"
                     >
                         <img src={dinoEgg} alt="twbs" width="32" height="32" className="rounded-circle bg-warning p-1 flex-shrink-0" />
                         <div className="d-flex gap-2 w-100 justify-content-between">
@@ -62,7 +62,7 @@ const ProfileComments = () => {
                                 </a>
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </div>
 {/*             <button onClick={addComment}>Add Comment</button>

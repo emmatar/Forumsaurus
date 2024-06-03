@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import dinoEgg from '../../assets/dinoEgg.svg';
-import CommentCard from '../Comments/Card';
-import AddComment from '../Comments/AddComment';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import dinoEgg from "../../assets/dinoEgg.svg";
+import CommentCard from "../Comments/Card";
+import AddComment from "../Comments/AddComment";
 
 const ForumPost = ({ post }) => {
+  
 
 	return (
 		<div className='d-flex flex-column flex-row pl-0 mt-1 gap-4 pb-5 align-items-center justify-content-center'>
@@ -76,4 +76,3 @@ const ForumPost = ({ post }) => {
 };
 
 export default ForumPost;
-

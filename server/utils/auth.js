@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const secret = process.env.SECRET_JWT || "secret";
 const expiration = "2h";
 module.exports = {
-  AuthenticatorError: new GraphQLError("Could not authenticate user.", {
+  AuthenticationError: new GraphQLError("Could not authenticate user.", {
     extensions: {
       code: "UNAUTHENTICATED",
     },
@@ -30,6 +30,7 @@ module.exports = {
     try {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.profile = data;
+      console.log(req.profile)
     } catch {
       console.log("Invalid token");
       // return res.status(400).json({ message: 'invalid token!' });

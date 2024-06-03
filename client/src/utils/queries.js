@@ -54,7 +54,10 @@ export const QUERY_POSTS = gql`
   query Posts {
     posts {
       _id
-      username
+      profile {
+       _id
+       username
+      }
       title
       content
     }
