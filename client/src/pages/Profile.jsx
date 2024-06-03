@@ -95,17 +95,20 @@ const Profile = () => {
                     <h3 className="fs-2 text-body-emphasis">
                       {profile.username}
                     </h3>
-                    <Button
-                      className="btn btn-sm bg-primary border text-white ms-4 mb-3 py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start"
-                      variant="primary"
-                      onClick={handleShow}
-                    >
-                      Edit Bio
-                    </Button>
                   </div>
                 </div>
+                <div className="border py-2 border-primary rounded border-2 px-3">
+                  <Button
+                    href="#"
+                    variant="link"
+                    onClick={handleShow}
+                    className="text-decoration-none p-0 py-1"
+                  >
+                    <small>Edit Bio</small>
+                  </Button>
 
-                <p>{profile.bio}</p>
+                  <p>{profile.bio}</p>
+                </div>
               </div>
             </div>
             <ProfilePostsCont posts={profile.posts} />

@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1920px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -11,4 +11,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+li {
 }
