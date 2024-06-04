@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import dinoEgg from "../../assets/dinoEgg.svg";
-import CommentCard from '../Comments/Card';
 
 const ProfileComments = () => {
-    // State to store comments
     const [comments, setComments] = useState([
         {
             id: 1,
@@ -15,33 +13,31 @@ const ProfileComments = () => {
         }
     ]);
 
-    // Function to add a new comment
     const addComment = () => {
         const newComment = {
             id: comments.length + 1,
             author: 'NewCommentAuthor',
             body: 'NewCommentBody',
             reply: 'NewReplyBody',
-            createdOn: '1h' 
+            createdOn: '1h'
         };
 
         setComments([...comments, newComment]);
     }
 
-    // Function to delete a comment by ID
     const deleteComment = (id) => {
-        setComments(comments.filter(comment => comment.id !== id));
+        setComments(comments.filter(comment => comment._id !== id));
     }
 
     return (
         <div className="d-flex flex-column flex-row pl-0 mt-1 gap-4 pb-5 align-items-center justify-content-center">
             <div className="list-group w-100 conatiner-fluid">
                 {comments.map(comment => (
-    <Link
-        key={comment.id}
-        to="#"
-        className="list-group-item list-group-item-action border border-2 d-flex gap-3 py-3"
-        aria-current="true"
+                    <Link
+                        key={comment._id}
+                        to="#"
+                        className="list-group-item list-group-item-action border border-2 d-flex gap-3 py-3"
+                        aria-current="true"
                     >
                         <img src={dinoEgg} alt="twbs" width="32" height="32" className="rounded-circle bg-warning p-1 flex-shrink-0" />
                         <div className="d-flex gap-2 w-100 justify-content-between">
@@ -65,8 +61,8 @@ const ProfileComments = () => {
                     </Link>
                 ))}
             </div>
-{/*             <button onClick={addComment}>Add Comment</button>
- */}        </div>
+            <button onClick={addComment}>Add Comment</button>
+        </div>
     )
 }
 

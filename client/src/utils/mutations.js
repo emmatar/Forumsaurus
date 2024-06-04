@@ -57,12 +57,20 @@ export const EDIT_BIO = gql`
 `;
 
 export const ADD_COMMENT = gql`
-  mutation addComment($body: String!, $profileId: ID!, $postId: ID!) {
-    addComment(body: $body, profileId: $profileId, postId: $postId) {
-      _id
-      body
-      profile_id
-      post_id
+  mutation addComment( $postId: ID!, $commentBody: String!) {
+    addComment(postId: $postId, commentBody: $commentBody) {
+      profile {
+        _id
+        username
+       }
+       title
+       content
+       comments {
+         commentBody
+         profile {
+           username
+         }
+       }
     }
   }
 `;

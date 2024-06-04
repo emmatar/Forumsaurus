@@ -45,6 +45,13 @@ export const QUERY_ME = gql`
         content
         date
         rawrs
+        comments {
+          commentBody
+          _id
+          profile {
+            username
+          }
+        }
       }
     }
   }
@@ -60,6 +67,12 @@ export const QUERY_POSTS = gql`
       }
       title
       content
+      comments {
+        commentBody
+        profile {
+          username
+        }
+      }
     }
   }
 `;

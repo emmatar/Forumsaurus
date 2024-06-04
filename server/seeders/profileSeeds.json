@@ -8,11 +8,13 @@
     "posts": [
       {
         "title": "Are Dinosaurs still Alive?",
-        "content": "I just saw a crocodile the other day and wondered."
+        "content": "I just saw a crocodile the other day and wondered.",
+        "comments": []
       },
       {
         "title": "New flying dinosaur skeleton discovered!",
-        "content": "In the Isle of Skye in Scotland, the discovery of a winged dinosaur skeleton that was found."
+        "content": "In the Isle of Skye in Scotland, the discovery of a winged dinosaur skeleton that was found.",
+        "comments": []
       }
     ]
   },
@@ -25,7 +27,8 @@
     "posts": [
       {
         "title": "Do T-rex's really sound like ducks?",
-        "content": "Was watching Jurassic Park the other night and that HUGE T-Rex sounded like my pet duck Larry."
+        "content": "Was watching Jurassic Park the other night and that HUGE T-Rex sounded like my pet duck Larry.",
+        "comments": []
       }
     ]
   },
@@ -38,7 +41,8 @@
     "posts": [
       {
         "title": "Largest Dinosaur!",
-        "content": "The Titanosaur Patagotitan Mayorum was almost as long as a Boeing 737. Why is that so hard to believe."
+        "content": "The Titanosaur Patagotitan Mayorum was almost as long as a Boeing 737. Why is that so hard to believe.",
+        "comments": []
       }
     ]
   },
@@ -51,11 +55,13 @@
     "posts": [
       {
         "title": "A sharp-clawed dinosaur munched plants",
-        "content": "The Troodon dinosaur were hungry for greens as well as small prey. Even though Troodon had sharp teeth and sharp foot claws to pin lizards, mammals and other morsels, it seems this dinosaur often preferred plants and left most of the hunting to sharper-toothed relatives."
+        "content": "The Troodon dinosaur were hungry for greens as well as small prey. Even though Troodon had sharp teeth and sharp foot claws to pin lizards, mammals and other morsels, it seems this dinosaur often preferred plants and left most of the hunting to sharper-toothed relatives.",
+        "comments": []
       },
       {
         "title": "What does the name \"dinosaur\" mean?",
-        "content": "A monstrous LIZARD...ew!"
+        "content": "A monstrous LIZARD...ew!",
+        "comments": []
       }
     ]
   },
@@ -68,7 +74,8 @@
     "posts": [
       {
         "title": "Did anybody know that there were 3 era's of creatures?",
-        "content": "Dinosaurs lived during the Mesozoic Era, also known as the \"Age of Dinosaurs\". This era had three periods: Triassic, Jurassic, and Cretaceous, each with different dinosaurs."
+        "content": "Dinosaurs lived during the Mesozoic Era, also known as the \"Age of Dinosaurs\". This era had three periods: Triassic, Jurassic, and Cretaceous, each with different dinosaurs.",
+        "comments": []
       }
     ]
   },
@@ -81,7 +88,8 @@
     "posts": [
       {
         "title": "Discovery of a new sourther dinosaur!",
-        "content": "Named the \"Gonkoken nanoi\", the dinosaur superficially resembles hadrosaurs like the famous Edmontosaurus!"
+        "content": "Named the \"Gonkoken nanoi\", the dinosaur superficially resembles hadrosaurs like the famous Edmontosaurus!",
+        "comments": []
       }
     ]
   }

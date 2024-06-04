@@ -18,10 +18,10 @@ const postSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  comments: {
+  comments:[ {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Comment",
-  },
+  }],
   rawrs: {
     type: Number,
     default: 0,
