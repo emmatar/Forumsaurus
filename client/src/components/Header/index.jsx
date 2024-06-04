@@ -14,7 +14,7 @@ const Header = () => {
 		<header className='bg-primary shadow-lg'>
 			<div className='container border border-primary d-flex flex-warp align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom'>
 				<div className='col-md-3 mb-2 mb-md-0'>
-					<a
+					<Link
 						to='/'
 						className='text-light d-inline-flex link-body-emphasis text-decoration-none'>
 						<img
@@ -25,7 +25,7 @@ const Header = () => {
 						<div className='d-inline-flex align-items-center fs-5 fw-bold mx-1'>
 							FORUMSAURUS
 						</div>
-					</a>
+					</Link>
 				</div>
 				<ul className='nav col-12 col-md-auto mb-2 justify-content-center mb-md-0'>
 					<li>
@@ -69,11 +69,18 @@ const Header = () => {
 						<>
               <Button
                 type='button'
-                className='btn btn-outline-primary me-2'
+                className='btn btn-primary'
                 onClick={() => (window.location.href = '/login')}
               >
                 Login
-              </Button>
+				</Button>
+				<Button
+					type='button'
+					className='btn btn-primary'
+					onClick={() => (window.location.href = '/signup')}
+				>
+					Sign Up
+				</Button>
 						</>
 					)}
 				</div>
