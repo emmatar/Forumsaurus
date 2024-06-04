@@ -6,6 +6,7 @@ const profileSeeds = require("./profileSeeds.json");
 db.once("open", async () => {
   await cleanDB("Profile", "profiles");
   await cleanDB("Post", "posts");
+  await cleanDB("Comment", "comments");
 
   for (const prof of profileSeeds) {
    

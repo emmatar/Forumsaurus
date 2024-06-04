@@ -67,11 +67,11 @@ const ForumPost = ({ post }) => {
 				<div className='list-group'>
 					{post.comments.map((comment) => (
 						<CommentCard
-							key={comment.id}
+							key={comment._id}
 							comment={comment}
 						/>
 					))}
-					<AddComment key={post.id} />
+					<AddComment key={post._id} />
 				</div>
 			</div>
 		</div>
