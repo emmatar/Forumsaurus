@@ -7,13 +7,13 @@ const CommentCard = ({ comment }) => {
             <div className="d-flex gap-2 w-100 justify-content-between">
                 <div className="p-0 m-0">
                     <small className="opacity-75">
-                        <strong>{comment.author}:</strong>
+                        <strong>{comment.profile.username}:</strong>
                     </small>
                     <p className="my-2">
-                        {comment.body}
+                        {comment.commentBody}
                     </p>
                 </div>
-                <small className="opacity-50 text-nowrap">{comment.createdOn}</small>
+                {/* <small className="opacity-50 text-nowrap">{comment.createdOn}</small> */}
             </div>
         </div>
     );

@@ -13,6 +13,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Error from "./pages/Error";
 import NewPost from "./pages/NewPost.jsx";
+import PostDetails from "./pages/PostDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/newpost",
         element: <NewPost/>
+      },
+      {
+        path: "/postdetails/:postId",
+        element: <PostDetails/>
       }
     ],
   },

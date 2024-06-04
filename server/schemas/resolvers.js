@@ -18,7 +18,7 @@ const resolvers = {
       if (context.profile) {
         const userData = await Profile.findOne({
           _id: context.profile._id,
-        }).populate({ path: "posts", populate: { path: "comments" } });
+        }).populate({ path: "posts", populate: { path: "comments", populate: {path: "profile"} } });
         return userData;
       }
       throw AuthenticationError;
@@ -73,6 +73,7 @@ const resolvers = {
           title,
           content,
           profile: context.profile._id,
+          comments: []
         });
 
         await Profile.findOneAndUpdate(
@@ -92,7 +93,6 @@ const resolvers = {
           profile: context.profile._id,
           post: postId,
         });
-
         const updatedPost = await Post.findOneAndUpdate(
           { _id: postId },
           { $addToSet: { comments: newComment._id } },
