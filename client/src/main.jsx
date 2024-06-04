@@ -8,7 +8,7 @@ import "./scss/styles.scss";
 
 import App from "./App.jsx";
 import Forum from "./pages/Forum";
-import ForumPost from "./components/ForumPost/Post";
+import Post from "./pages/Post";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/forum/:postId",
-        element: <ForumPost />,
+        element: <Post />,
       },
       {
         path: "/login",
