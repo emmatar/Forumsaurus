@@ -2,19 +2,28 @@ import React from "react";
 import { Link } from "react-router-dom";
 import dinoEgg from "../../assets/dinoEgg.svg";
 
-const ProfilePosts = ({ posts, title }) => {
+const ProfilePosts = ({ posts }) => {
     return (
         <div className="d-flex flex-column flex-row pl-0 mt-1 gap-4 pb-5 align-items-center justify-content-center">
             <div className="list-group w-100 container-fluid">
                 {Array.isArray(posts) && posts.map(post => (
-                    <div key={post._id} className="list-group-item border border-2 d-flex gap-3 py-3" aria-current="true">
+                    <div post={post} key={post._id} className="list-group-item border border-2 d-flex gap-3 py-3" aria-current="true">
                         <img src={dinoEgg} alt="twbs" width="32" height="32" className="rounded-circle bg-warning p-1 flex-shrink-0" />
                         <div className="d-flex gap-2 w-100 justify-content-between">
                             <div>
-                                <Link to="#" className="text-decoration-none mb-0 text-black">
+                                <Link
+                                    to={`/forum/${post._id}`}
+                                    key={post._id}
+                                    post={post}
+                                    className="text-decoration-none mb-0 text-black"
+                                >
                                     <h5 className="mb-0 fw-bolder mb-0">{post.content}</h5>
                                 </Link>
-                                <Link>
+                                <Link
+                                    to={`/profiles/${post.profile._id}`}
+                                    key={post.profile._id}
+                                    profile={post.profile}
+                                >
                                     <small className="opacity-75">{post.profile.username || 'Anonymous'}</small>
                                 </Link>
                                 <p className="">{post.content}</p>

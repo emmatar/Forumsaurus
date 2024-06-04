@@ -5,8 +5,8 @@ import CommentCard from "../Comments/Card";
 import AddComment from "../Comments/AddComment";
 
 const ForumPost = ({ post }) => {
-  
-
+	
+	
 	return (
 		<div className='d-flex flex-column flex-row pl-0 mt-1 gap-4 pb-5 align-items-center justify-content-center'>
 			<div className='list-group w-100 container-fluid'>
@@ -28,9 +28,12 @@ const ForumPost = ({ post }) => {
 							</Link>
 							<p>{post.content}</p>
 							<div className='d-flex px-0 gap-1 align-items-center'>
-								<button className='btn btn-sm bg-primary border text-white py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start'>
+								<Link
+									to={`/profiles/${post.author}`}
+									className='btn btn-sm bg-primary border text-white py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start'
+								>
 									{post.author}
-								</button>
+								</Link>
 								<a className='btn btn-sm bg-primary border text-white py-2 px-3 rounded-pill d-flex align-items-center gap-1 justify-content-start'>
 									<img
 										src={dinoEgg}
