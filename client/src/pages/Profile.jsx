@@ -7,6 +7,7 @@ import ProfilePostsCont from "../components/ProfilePostsCont";
 import EditBio from "../components/Bio/index.jsx";
 import Button from "react-bootstrap/esm/Button";
 import { useState } from "react";
+import dinoHeader from "../../src/assets/dinoHeader.svg";
 
 const Profile = () => {
   const { profileId } = useParams();
@@ -87,9 +88,7 @@ const Profile = () => {
               <div className="feature border border-2 p-4">
                 <div className="d-flex align-items-center">
                   <div className="feature-icon rounded-circle d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                    <svg className="bi rounded" width="2em" height="2em">
-                      <use xlinkHref="#collection"></use>
-                    </svg>
+                  <img src={dinoHeader} className="bi m-2" width="50" height="50" />
                   </div>
                   <div className="d-flex ms-3">
                     <h3 className="fs-2 text-body-emphasis">
