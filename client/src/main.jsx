@@ -8,6 +8,7 @@ import "./scss/styles.scss";
 
 import App from "./App.jsx";
 import Forum from "./pages/Forum";
+import ForumPost from "./components/ForumPost/Post";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Forum />,
+      },
+      {
+        path: "/forum/:postId",
+        element: <ForumPost />,
       },
       {
         path: "/login",
