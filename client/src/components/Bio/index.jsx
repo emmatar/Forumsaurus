@@ -47,7 +47,7 @@ export const EditBio = ({ show, handleClose }) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="dark" onClick={handleClose}>
             Close
           </Button>
           <Button variant="primary" onClick={handleSubmit}>

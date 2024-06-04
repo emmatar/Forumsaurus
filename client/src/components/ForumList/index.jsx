@@ -15,7 +15,7 @@ const ProfilePosts = ({ posts, title }) => {
                                     <h5 className="mb-0 fw-bolder mb-0">{post.content}</h5>
                                 </Link>
                                 <Link>
-                                    <small className="opacity-75">{post.author || 'Anonymous'}</small>
+                                    <small className="opacity-75">{post.profile.username || 'Anonymous'}</small>
                                 </Link>
                                 <p className="">{post.content}</p>
                                 <div className="d-flex px-0 gap-1 align-items-center">

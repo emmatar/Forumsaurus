@@ -1,83 +1,164 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Auth from "../../utils/auth";
-import dinoHeader from "../../assets/dinoHeader.svg";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
+import dinoHeader from '../../assets/dinoHeader.svg';
+import { Button } from 'react-bootstrap';
 
 const Header = () => {
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
+	const logout = (event) => {
+		event.preventDefault();
+		Auth.logout();
+	};
 
-  return (
-    <header className="shadow-lg bg-primary text-light mb-4 py-3 display-flex align-center">
-      <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
-        <Link className="text-light" to="/">
-          <h1
-            className="fw-bold m-0"
-            style={{ textDecoration: "none", fontSize: "3rem" }}
-          >
-            FORUMSAURUS
-          </h1>
-        </Link>
-        <p className="m-0" style={{ fontSize: "1.75rem", fontWeight: "700" }}>
-          The Forum for Dino Lovers
-        </p>
-        <div>
-          {Auth.loggedIn() ? (
+	<header class='d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom'>
+		<div class='col-md-3 mb-2 mb-md-0'>
+			<a
+				href='/'
+				class='d-inline-flex link-body-emphasis text-decoration-none'>
+				<svg
+					class='bi'
+					width='40'
+					height='32'
+					role='img'
+					aria-label='Bootstrap'>
+					<use xlink:href='#bootstrap'></use>
+				</svg>
+			</a>
+		</div>
+
+		<ul class='nav col-12 col-md-auto mb-2 justify-content-center mb-md-0'>
+			<li>
+				<a
+					href='#'
+					class='nav-link px-2 link-secondary'>
+					Home
+				</a>
+			</li>
+			<li>
+				<a
+					href='#'
+					class='nav-link px-2'>
+					Features
+				</a>
+			</li>
+			<li>
+				<a
+					href='#'
+					class='nav-link px-2'>
+					Pricing
+				</a>
+			</li>
+			<li>
+				<a
+					href='#'
+					class='nav-link px-2'>
+					FAQs
+				</a>
+			</li>
+			<li>
+				<a
+					href='#'
+					class='nav-link px-2'>
+					About
+				</a>
+			</li>
+		</ul>
+
+		<div class='col-md-3 text-end'>
+			<button
+				type='button'
+				class='btn btn-outline-primary me-2'>
+				Login
+			</button>
+			<button
+				type='button'
+				class='btn btn-primary'>
+				Sign-up
+			</button>
+		</div>
+	</header>;
+
+	return (
+		<header className='bg-primary shadow-lg'>
+			<div className='container border border-primary d-flex flex-warp align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom'>
+				<div className='col-md-3 mb-2 mb-md-0'>
+					<a
+						to='/'
+						className='text-light d-inline-flex link-body-emphasis text-decoration-none'>
+						<img
+							src={dinoHeader}
+							width='32'
+							height='32'
+						/>
+						<div className='d-inline-flex align-items-center fs-5 fw-bold mx-1'>
+							FORUMSAURUS
+						</div>
+					</a>
+					{/*           <p
+            className='m-0'
+            style={{ fontSize: '1.75rem', fontWeight: '700' }}>
+            The Forum for Dino Lovers
+          </p> */}
+				</div>
+				<ul class='nav col-12 col-md-auto mb-2 justify-content-center mb-md-0'>
+					<li>
+						<Link
+							to='/'
+							class='nav-link px-2 link-light'>
+							Home
+						</Link>
+					</li>
+            {Auth.loggedIn() ? (
+              <>
+              <li>
+                <Link
+                  to='/me'
+                  class='nav-link px-2 link-light'>
+                  Profile
+                </Link>
+                </li>
+              <li>
+                <Link
+                  to='/NewPost'
+                  class='nav-link px-2 link-light'>
+                  Create Post
+                </Link>
+              </li>
+              </>
+            ) : null}
+				</ul>
+				<div className='col-md-3 text-end'>
+					{Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-primary m-2" to="/me">
-                View My Profile
-              </Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+              <Button
+                type='button'
+                className='btn btn-outline-primary text-light me-2'
+                onClick={logout}
+              >
                 Logout
-              </button>
-              <Link
-                className="btn btn-lg btn-primary border border-2 border-light fw-medium text-light m-2"
-                to="/newpost"
-              >
-                Create A Post
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link
-                className="btn btn-lg btn-primary border border-2 border-light fw-medium text-light m-2"
-                to="/login"
-              >
-                Login
-              </Link>
-              <Link
-                className="btn btn-lg btn-primary border border-2 border-light fw-medium text-light m-2"
-                to="/signup"
-              >
-                Signup
-              </Link>
-              {/* Add the Link to NewPost component */}
-            </>
-          )}
-        </div>
-      </div>
-      <div className="py-3 mb-4 border-bottom">
-        <div className="container d-flex flex-wrap justify-content-center">
-          <a
-            href="/"
-            className="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none"
-          >
-            <img src={dinoHeader} className="bi me-2" width="40" height="32" />
-          </a>
-          <form className="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
-            <input
-              type="search"
-              className="form-control"
-              placeholder="Search..."
-              aria-label="Search"
-            />
-          </form>
-        </div>
-      </div>
-    </header>
-  );
+              </Button>
+						</>
+					) : (
+						<>
+              <Button
+                type='button'
+                className='btn btn-outline-primary me-2'
+                onClick='/login'
+                >
+                  <Link
+                    to='/login'
+                    className='nav-link px-2 link-light'
+                  >
+                    Login
+                  </Link>
+                </Button>
+							{/* Add the Link to NewPost component */}
+						</>
+					)}
+				</div>
+			</div>
+		</header>
+	);
 };
 
 export default Header;
